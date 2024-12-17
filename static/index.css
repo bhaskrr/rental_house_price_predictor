@@ -1,0 +1,49 @@
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    text-align: center;
+    font-family: cursive;
+    font-size: 1.5rem;
+}
+
+form {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid gray;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    line-height: 1.5;
+}
+
+select, input[type="number"] {
+    width: 8rem;
+}
+
+.layout_type, .property_type, .area, .bedroom{
+    margin-bottom: 1rem;
+}
+
+.btn {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    border: 2px solid green;
+}
+
+.price {
+    text-align: center;
+}

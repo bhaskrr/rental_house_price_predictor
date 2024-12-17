@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/index.css" rel="stylesheet" />
+    <title>Rental House Price Predictor</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Rental House Price Predictor</h1>
+    </header>
+    <main>
+        <form action="/" method="POST">
+            <section class="inputs">
+                <section class="categorical">
+                    <section class="layout_type">
+                        <label for="layout">Select layout type:<label> <br>
+                        <select name="layout_type" id="layout" required>
+                            {% for layout in layout_type %}
+                                <option value={{layout}}>{{layout}}</option>
+                            {% endfor %}
+                        </select>
+                    </section>
+                    <section class="property_type">
+                        <label for="property">Select property type:<label> <br>
+                        <select name="property_type" id="property" required>
+                            {% for property in property_type %}
+                                <option value={{property.value}}>{{property.label}}</option>
+                            {% endfor %}
+                        </select>
+                    </section>
+                    <section class="furnish_type">
+                        <label for="furnish">Select furnish type:<label> <br>
+                        <select name="furnish_type" id="furnish" required>
+                            {% for furnish in furnish_type %}
+                                <option value={{furnish}}>{{furnish}}</option>
+                            {% endfor %}
+                        </select>
+                    </section>
+                </section>
+                
+                <section class="numerical">
+                    <section class="area">
+                        <label for="area">Enter Area(sq. ft.)</label>
+                        <br>
+                        <input type="number" min="200" max="2000" name="area" id="area" required />
+                    </section>
+                    <section class="bedroom">
+                        <label for="num_bedrooms">Number of Bedrooms</label>
+                        <br>
+                        <input type="number" min="1" max="5" name="bedroom" id="num_bedrooms" required />
+                    </section>
+                    <section class="bathroom">
+                        <label for="num_bathrooms">Number of Bathrooms</label>
+                        <br>
+                        <input type="number" min="1" max="5" name="bathroom" id="num_bathrooms" required />
+                    </section>
+                </section>
+            </section>
+            <br>
+            <section class="btn">
+                <button type="submit">Get Rent</button>
+            </section>
+        </form>
+        {% if price %}
+            <section class="price">
+                <p>The rent would be: {{price}} rs.(approx)<p>
+            </section>
+            {% endif %}
+    </main>
+</body>
+</html>
